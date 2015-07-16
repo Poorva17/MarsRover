@@ -12,15 +12,12 @@ public class MarsRover {
         x=0;
         y=0;
         position="N";
-
-
     }
     MarsRover(int a,int b,String pos)
     {
         this.x=a;
         this.y=b;
         this.position=pos;
-
     }
 
     public void showCurrent()
@@ -30,29 +27,30 @@ public class MarsRover {
     }
     public void moveLR(char movedirection)
     {
+        System.out.print("in moveLR character "+movedirection);
         if(Character.toString(movedirection).matches("L"))
         {
-
-            if(this.position=="N")
+            if(this.position.equals("N"))
             {
+                System.out.print("changing position");
                 this.position="W";
-              //  this.x=this.x-1;
+
 
             }
-            else if(this.position=="W")
+            else if(this.position.equals("W"))
             {
                 this.position="S";
-                //this.y=this.y-1;
+
             }
-            else if(this.position=="S")
+            else if(this.position.equals("S"))
             {
                 this.position="E";
-                //this.x=this.x+1;
+
             }
-            else if(this.position=="E")
+            else if(this.position.equals("E"))
             {
                 this.position="N";
-                //this.y=this.y+1;
+
             }
 
 
@@ -60,23 +58,23 @@ public class MarsRover {
         if(Character.toString(movedirection).matches("R"))
         {
 
-            if(this.position=="N")
+            if(this.position.equals("N"))
             {
                 this.position="E";
                 //this.x=this.x+1;
 
             }
-            else if(this.position=="E")
+            else if(this.position.equals("E"))
             {
                 this.position="S";
                 //this.y=this.y-1;
             }
-            else if(this.position=="S")
+            else if(this.position.equals("S"))
             {
                 this.position="W";
                 //this.x=this.x-1;
             }
-            else if(this.position=="W")
+            else if(this.position.equals("W"))
             {
                 this.position="N";
                 //this.y=this.y+1;
@@ -90,22 +88,23 @@ public class MarsRover {
     public void move()
     {
 
-            if(this.position=="N")
+        System.out.print("in move");
+            if(this.position.equals("N"))
             {
                 this.y=this.y+1;
 
             }
-            else if(this.position=="W")
+            else if(this.position.equals("W"))
             {
                 //this.position="S";
                 this.x=this.x-1;
             }
-            else if(this.position=="S")
+            else if(this.position.equals("S"))
             {
                 //this.position="E";
                 this.y=this.y-1;
             }
-            else if(this.position=="E")
+            else if(this.position.equals("E"))
             {
                 //this.position="N";
                 this.x=this.x+1;

@@ -8,23 +8,38 @@ public class TestMars {
 
     public static void main(String[] args) {
 
-        MarsRover R=new MarsRover(3,3,"E");
-        R.showCurrent();
-        String input;
-        System.out.println("Enter Input string:");
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
 
         try {
+            System.out.println("Enter X coordinate:");
+            String input,input1,input2,input3;
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             input=in.readLine();
+
+            System.out.println("Enter Y coordinate:");
+            BufferedReader in1 = new BufferedReader(new InputStreamReader(System.in));
+            input1=in1.readLine();
+
+            System.out.println("Enter Direction:");
+            BufferedReader in2 = new BufferedReader(new InputStreamReader(System.in));
+            input2=in2.readLine();
+
+
+            MarsRover R=new MarsRover(Integer.parseInt(input),Integer.parseInt(input1),input2);
+            R.showCurrent();
+
+            System.out.println("Enter Input string:");
+            BufferedReader in3 = new BufferedReader(new InputStreamReader(System.in));
+            input3=in3.readLine();
             int i;
-            for(i=0;i<input.length();i++)
+            for(i=0;i<input3.length();i++)
             {
 
-                if(input.charAt(i)=='L'||input.charAt(i)=='R')
+                if((input3.charAt(i) == 'L') || (input3.charAt(i) == 'R'))
                 {
-                    R.moveLR(input.charAt(i));
+                    R.moveLR(input3.charAt(i));
                 }
-                if(input.charAt(i)=='M')
+                if(input3.charAt(i)=='M')
                 {
                     R.move();
                 }
